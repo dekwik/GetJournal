@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailRiwayatPost">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/designMainColor"
+        app:cardCornerRadius="16dp"
+        app:cardPreventCornerOverlap="false">
+
+        <ImageView
+            android:id="@+id/sakitnih"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:src="@drawable/book"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/txtKeluhanDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Judul"
+            android:textSize="14sp"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="14dp"
+            style="@style/textInputHintStyle"
+            app:layout_constraintStart_toEndOf="@+id/sakitnih"
+            app:layout_constraintTop_toTopOf="@+id/sakitnih" />
+
+        <TextView
+            android:id="@+id/txtKeluhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dekwik Android Studio"
+            android:textSize="12sp"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="34dp"
+            app:layout_constraintStart_toEndOf="@+id/sakitnih"
+            app:layout_constraintTop_toTopOf="@+id/sakitnih" />
+
+        <TextView
+            android:id="@+id/txtPenyakitDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOI"
+            android:textSize="14sp"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="54dp"
+            style="@style/textInputHintStyle"
+            app:layout_constraintStart_toEndOf="@+id/sakitnih"
+            app:layout_constraintTop_toTopOf="@+id/sakitnih" />
+
+        <TextView
+            android:id="@+id/txtPenyakit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doi PDF"
+            android:textSize="12sp"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="74dp"
+            app:layout_constraintStart_toEndOf="@+id/sakitnih"
+            app:layout_constraintTop_toTopOf="@+id/sakitnih" />
+
+        <TextView
+            android:id="@+id/txtPoliDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abstrak"
+            android:textSize="14sp"
+            style="@style/textInputHintStyle"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="100dp"
+            app:layout_constraintStart_toEndOf="@+id/sakitnih"
+            app:layout_constraintTop_toTopOf="@+id/sakitnih" />
+
+        <TextView
+            android:id="@+id/txtPoli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Umum"
+            android:textSize="12sp"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="120dp"
+            app:layout_constraintStart_toEndOf="@+id/sakitnih"
+            app:layout_constraintTop_toTopOf="@+id/sakitnih" />
+
+
+        <TextView
+            android:id="@+id/txtTinggiDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="File"
+            android:textSize="14sp"
+            style="@style/textInputHintStyle"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="140dp"
+            app:layout_constraintStart_toEndOf="@+id/sakitnih"
+            app:layout_constraintTop_toTopOf="@+id/sakitnih" />
+
+        <TextView
+            android:id="@+id/txtTinggi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Link PDF"
+            android:textSize="12sp"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="160dp"
+            app:layout_constraintStart_toEndOf="@+id/sakitnih"
+            app:layout_constraintTop_toTopOf="@+id/sakitnih" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/editrwtrgs"
+        style="@style/loginButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Edit"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:backgroundTint="@color/blue"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <Button
+        android:id="@+id/delrwtrgs"
+        style="@style/loginButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Delete"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:backgroundTint="@color/red"
+        app:layout_constraintStart_toEndOf="@+id/editrwtrgs"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

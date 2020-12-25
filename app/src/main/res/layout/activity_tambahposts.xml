@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".EditprofileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            style="@style/linearParent"
+            android:layout_gravity="center"
+            android:padding="@dimen/loginViewsMargin">
+
+            <TextView
+                style="@style/headerTextPrimary"
+                android:text="Tambah Jurnal"
+                android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/parent"
+                android:layout_marginTop="@dimen/signup_text_margin_top"
+                android:id="@+id/txtJudulBaruLayout">
+                <EditText
+                    style="@style/modifiedEditText"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Judul Jurnal"
+                    android:id="@+id/txtJudulBaru"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDoiJurnalLayout"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+                <EditText
+                    style="@style/modifiedEditText"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Doi"
+                    android:id="@+id/txtDoiBaru"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtAbstrakBaruLayout"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+                <EditText
+                    style="@style/modifiedEditText"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Abstrak"
+                    android:id="@+id/txtAbstrakBaru"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uploadfile"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Upload File (PDF)"
+                    android:layout_marginBottom="20dp"/>
+
+                <Button
+                    style="@style/loginButton"
+                    android:id="@+id/buttonUploadFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Upload File" />
+                <TextView
+                    android:id="@+id/textview"
+                    android:hint="No File"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="200dp"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp">
+
+                    <Button
+                        style="@style/loginButton"
+                        android:text="Tambah"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:id="@+id/btnRegRegis"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="200dp"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp">
+
+                    <Button
+                        android:id="@+id/Regcancel"
+                        style="@style/loginButton"
+                        android:text="Cancel"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/loginViewsMargin"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

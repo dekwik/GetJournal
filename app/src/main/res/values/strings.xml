@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GetJournal</string>
+    <string name="profinfo">Account Info</string>
+    <string name="login_email_hint">Email</string>
+
+    <style name="AppTheme.BottomAppbar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>

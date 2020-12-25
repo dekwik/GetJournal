@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditprofileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            style="@style/linearParent"
+            android:layout_gravity="center"
+            android:padding="@dimen/loginViewsMargin">
+
+            <TextView
+                style="@style/headerTextPrimary"
+                android:text="Edit Password"
+                android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/parent"
+                android:layout_marginTop="@dimen/signup_text_margin_top"
+                android:id="@+id/txtCurrentPasswordEditLayout">
+                <EditText
+                    style="@style/modifiedEditText"
+                    android:id="@+id/txtCurrentPasswordEdit"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:hint="Current Password"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/parent"
+                android:layout_marginTop="@dimen/signup_text_margin_top"
+                android:id="@+id/txtNewPasswordEditLayout">
+
+                <EditText
+                    android:id="@+id/txtNewPasswordEdit"
+                    style="@style/modifiedEditText"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:hint="New Password"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/parent"
+                android:layout_marginTop="@dimen/signup_text_margin_top"
+                android:id="@+id/txtConfirmPasswordEditLayout">
+
+                <EditText
+                    android:id="@+id/txtConfirmPasswordEdit"
+                    style="@style/modifiedEditText"
+                    android:hint="Confirm Password"
+                    android:maxLines="1"
+                    android:inputType="textPassword"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="200dp"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp">
+
+                    <Button
+                        android:id="@+id/btnEditPassword"
+                        style="@style/loginButton"
+                        android:text="Edit"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/loginViewsMargin"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="200dp"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp">
+
+                    <Button
+                        android:id="@+id/EditPassCancel"
+                        style="@style/loginButton"
+                        android:text="Cancel"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/loginViewsMargin"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

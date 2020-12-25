@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "307906498372",
+    "project_id": "journal-8d015",
+    "storage_bucket": "journal-8d015.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307906498372:android:1e2943651e2e8278091111",
+        "android_client_info": {
+          "package_name": "com.praktikum.getjournal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307906498372-2v2c6eu2l5hjd75sdt657h64smjalgn3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPS2QQXwXW4UInML_fOsvT9r_362Nq-5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307906498372-2v2c6eu2l5hjd75sdt657h64smjalgn3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".EditPostsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            style="@style/linearParent"
+            android:layout_gravity="center"
+            android:padding="@dimen/loginViewsMargin">
+
+            <TextView
+                style="@style/headerTextPrimary"
+                android:text="Edit Jurnal"
+                android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/parent"
+                android:layout_marginTop="@dimen/signup_text_margin_top"
+                android:id="@+id/txtJudulLayout">
+                <EditText
+                    style="@style/modifiedEditText"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Judul"
+                    android:id="@+id/txtJudul"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDoiLayout"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+                <EditText
+                    style="@style/modifiedEditText"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Doi"
+                    android:id="@+id/txtDoi"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtAbstrakLayout"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+                <EditText
+                    style="@style/modifiedEditText"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Abtrak"
+                    android:id="@+id/txtAbstrak"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="200dp"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp">
+
+                    <Button
+                        style="@style/loginButton"
+                        android:text="Edit"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:id="@+id/btnEditJurnal"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="200dp"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp">
+
+                    <Button
+                        android:id="@+id/CencelEdit"
+                        style="@style/loginButton"
+                        android:text="Cancel"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/loginViewsMargin"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
