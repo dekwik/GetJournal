@@ -3,9 +3,13 @@ package com.example.getjournal;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.OpenableColumns;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -26,16 +30,24 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class TambahPostActivity extends AppCompatActivity {
 
-    private Button button, btnRegis;
+    private Button button, btnRegis, btnUpload;
     EditText judul, doi, abstrak;
     TextInputLayout layoutjudul, layoutdoi, layoutabstrak;
     private String tokenLogin;
     ProgressDialog dialog;
+//    byte[] fileData;
+//    String displayNamePDF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +80,13 @@ public class TambahPostActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.Regcancel);
         btnRegis = (Button)findViewById(R.id.btnRegRegis);
 
+//        btnUpload = findViewById(R.id.buttonUploadFile);
+//        btnUpload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                pickImage();
+//            }
+//        });
 
         btnRegis.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +160,70 @@ public class TambahPostActivity extends AppCompatActivity {
         });
     }
 
+//    private void pickImage() {
+//        Intent intent = new Intent();
+//        intent.setAction(Intent.ACTION_GET_CONTENT);
+//        intent.setType("application/pdf");
+//        startActivityForResult(intent,1);
+//    }
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (resultCode == RESULT_OK) {
+//            // Get the Uri of the selected file
+//            Uri uri = data.getData();
+//            String uriString = uri.toString();
+//            File myFile = new File(uriString);
+//            String path = myFile.getAbsolutePath();
+//            String displayName = null;
+//
+//            if (uriString.startsWith("content://")) {
+//                Cursor cursor = null;
+//                try {
+//                    cursor = this.getContentResolver().query(uri, null, null, null, null);
+//                    if (cursor != null && cursor.moveToFirst()) {
+//                        displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+//                        Log.d("nameeeee>>>>  ",displayName);
+//                        fileData = getPDF(displayName, uri);
+//                        displayNamePDF = displayName;
+//                    }
+//                } finally {
+//                    cursor.close();
+//                }
+//            } else if (uriString.startsWith("file://")) {
+//                displayName = myFile.getName();
+//                Log.d("nameeeee>>>>  ",displayName);
+//            }
+//        }
+//
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//    }
+//
+//    private byte[] getPDF(String displayName, Uri uri){
+//        InputStream iStream = null;
+//        try {
+//            iStream = getContentResolver().openInputStream(displayName);
+//            final byte[] inputData = getBytes(iStream);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e){
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    public byte[] getBytes(InputStream inputStream) throws IOException {
+//        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
+//        int bufferSize = 1024;
+//        byte[] buffer = new byte[bufferSize];
+//
+//        int len = 0;
+//        while ((len = inputStream.read(buffer)) != -1) {
+//            byteBuffer.write(buffer, 0, len);
+//        }
+//        return byteBuffer.toByteArray();
+//    }
+
     private boolean validate(){
         if(judul.getText().toString().isEmpty()){
             layoutjudul.setErrorEnabled(true);
@@ -199,6 +282,8 @@ public class TambahPostActivity extends AppCompatActivity {
                 map.put("abstrak",abstrak.getText().toString());
                 return map;
             }
+
+
         };
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(request);

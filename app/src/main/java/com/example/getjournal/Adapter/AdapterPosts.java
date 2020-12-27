@@ -78,8 +78,8 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
             super(itemView);
 
             imageView = itemView.findViewById(R.id.bukgedebuk);
-            textView = itemView.findViewById(R.id.itemDate);
-            textView1 = itemView.findViewById(R.id.penyakitrgs);
+            textView = itemView.findViewById(R.id.JudulJurnal);
+            textView1 = itemView.findViewById(R.id.DoiJurnal);
             button1 = itemView.findViewById(R.id.editrwtrgs);
             button2 = itemView.findViewById(R.id.delrwtrgs);
             constraintLayout = itemView.findViewById(R.id.consrwtrgs);

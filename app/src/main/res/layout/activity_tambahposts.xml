@@ -72,15 +72,15 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Upload File" />
-                <TextView
-                    android:id="@+id/textview"
-                    android:hint="No File"
-                    android:layout_gravity="center"
-                    android:gravity="center_horizontal"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textview"-->
+<!--                    android:hint="No File"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent" />-->
             </com.google.android.material.textfield.TextInputLayout>
 
 

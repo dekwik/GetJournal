@@ -20,11 +20,11 @@
         android:layout_marginBottom="16dp"/>
 
     <TextView
-        android:id="@+id/itemDate"
+        android:id="@+id/JudulJurnal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="11-11-2020"
+        android:text="Judul Jurnal"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="normal"
@@ -32,21 +32,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/penyakitrgs"
+        android:id="@+id/DoiJurnal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/itemDate"
-        app:layout_constraintTop_toBottomOf="@+id/itemDate"
-        android:text="Sakit Demam" />
+        app:layout_constraintStart_toStartOf="@+id/JudulJurnal"
+        app:layout_constraintTop_toBottomOf="@+id/JudulJurnal"
+        android:text="123456" />
     <TextView
         android:id="@+id/postby"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/penyakitrgs"
-        app:layout_constraintTop_toBottomOf="@+id/penyakitrgs"
+        app:layout_constraintStart_toStartOf="@+id/DoiJurnal"
+        app:layout_constraintTop_toBottomOf="@+id/DoiJurnal"
         android:text="post by : dekwik" />
 </androidx.constraintlayout.widget.ConstraintLayout>

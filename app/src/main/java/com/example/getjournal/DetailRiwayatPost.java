@@ -54,9 +54,9 @@ public class DetailRiwayatPost extends AppCompatActivity {
             Log.d("bbb", idUser2);
 
 
-            judul = (TextView)findViewById(R.id.txtKeluhan);
-            doi = (TextView)findViewById(R.id.txtPenyakit);
-            abstrak = (TextView)findViewById(R.id.txtPoli);
+            judul = (TextView)findViewById(R.id.txtJurnal);
+            doi = (TextView)findViewById(R.id.txtDoiJurnal);
+            abstrak = (TextView)findViewById(R.id.txtAbstrakJurnal);
 
         }catch (Exception e ){
             Posts posts = HomeActivity.Listpostsbackup.get(position);
@@ -66,9 +66,9 @@ public class DetailRiwayatPost extends AppCompatActivity {
             Log.d("bbb", idUser2);
 
 
-            judul = (TextView)findViewById(R.id.txtKeluhan);
-            doi = (TextView)findViewById(R.id.txtPenyakit);
-            abstrak = (TextView)findViewById(R.id.txtPoli);
+            judul = (TextView)findViewById(R.id.txtJurnal);
+            doi = (TextView)findViewById(R.id.txtDoiJurnal);
+            abstrak = (TextView)findViewById(R.id.txtAbstrakJurnal);
         }
 
 
