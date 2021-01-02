@@ -2,7 +2,7 @@ package com.example.getjournal.Model;
 
 public class User {
     private String id;
-    private String userName;
+    private String name;
     private String lastname;
     private String email;
     private String photo;
@@ -15,12 +15,20 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getname() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setname(String userName) {
+        this.name = userName;
+    }
+
+    public String getlastname() {
+        return lastname;
+    }
+
+    public void setlastname(String userName) {
+        this.lastname = userName;
     }
 
     public String getEmail() {

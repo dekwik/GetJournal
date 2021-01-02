@@ -55,6 +55,33 @@
                     android:hint="Abtrak"
                     android:id="@+id/txtAbstrak"/>
             </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uploadfile"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Upload File (PDF)"
+                    android:layout_marginBottom="20dp"/>
+
+                <Button
+                    style="@style/loginButton"
+                    android:id="@+id/buttonEditFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Upload File" />
+                <!--                <TextView-->
+                <!--                    android:id="@+id/textview"-->
+                <!--                    android:hint="No File"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:gravity="center_horizontal"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    android:textSize="20sp"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent" />-->
+            </com.google.android.material.textfield.TextInputLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"

@@ -171,22 +171,6 @@ public class TambahPostActivity extends AppCompatActivity {
         });
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == PDF_UPLOAD_FILE && resultCode == RESULT_OK) {
-//            Uri docUri = data.getData();
-//            uristring = docUri.toString();
-//        }
-//    }
-//
-////    private void pickImage() {
-////        Intent intent = new Intent();
-////        intent.setAction(Intent.ACTION_GET_CONTENT);
-////        intent.setType("application/pdf");
-////        startActivityForResult(intent,1);
-////    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
@@ -329,60 +313,6 @@ public class TambahPostActivity extends AppCompatActivity {
 //        RequestQueue queue = Volley.newRequestQueue(UserInfoActivity.this);
         RequestQueue queue = Volley.newRequestQueue(TambahPostActivity.this);
         queue.add(volleyMultipartRequest);
-
-//        StringRequest request = new StringRequest(Request.Method.POST, Constant.POSTS_CREATE, response -> {
-//            try {
-//                JSONObject object1 = new JSONObject(response);
-//                if (object1.getInt("message_id") != 0) {
-//                    Intent intent = new Intent(this, MainActivity.class);
-//                    startActivity(intent);
-//                    Toast.makeText(getApplicationContext(), "Tambah Jurnal Success", Toast.LENGTH_SHORT).show();
-//                }
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//                Toast.makeText(getApplicationContext(), "Tambah Jurnal Failed", Toast.LENGTH_SHORT).show();
-//            }
-//            dialog.dismiss();
-//        }, error -> {
-//            error.printStackTrace();
-//            dialog.dismiss();
-//        }) {
-//            @Override
-//            public Map<String, String> getHeaders() throws AuthFailureError {
-//                Map<String, String> headers = new HashMap<>();
-//                // Basic Authentication
-//                //String auth = "Basic " + Base64.encodeToString(CONSUMER_KEY_AND_SECRET.getBytes(), Base64.NO_WRAP);
-//
-//                headers.put("Authorization", "Bearer " + tokenLogin);
-//                return headers;
-//            }
-//
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                HashMap<String, String> map = new HashMap<>();
-//                map.put("judul", judul.getText().toString());
-//                map.put("doi", doi.getText().toString());
-//                map.put("abstrak", abstrak.getText().toString());
-//                return map;
-//            }
-//
-//
-//        };
-//        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-//        queue.add(request);
     }
 
-//    public byte[] getFileDataFromFile(File file) {
-//        int size = (int) file.length();
-//        byte[] bytearray = new byte[size];
-//        try {
-//            BufferedInputStream buf = new BufferedInputStream(new FileInputStream(file));
-//            buf.read(bytearray, 0, bytearray.length);
-//            buf.close();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return bytearray;
-//    }
 }

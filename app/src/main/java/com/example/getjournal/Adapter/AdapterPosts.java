@@ -15,9 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.getjournal.DetailRiwayatPost;
 import com.example.getjournal.Model.Posts;
+import com.example.getjournal.Model.User;
 import com.example.getjournal.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> {
 
@@ -25,7 +27,7 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
 
     Context context;
 
-    public AdapterPosts(ArrayList<Posts> Listposts, Context context) {
+    public AdapterPosts(ArrayList<Posts> Listposts,  Context context) {
         this.Listposts = Listposts;
         this.context = context;
     }
@@ -47,7 +49,8 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
         Posts posts = Listposts.get(position);
 
         holder.textView.setText(""+posts.getJudul());
-        holder.textView1.setText(" DOI : "+posts.getDoi());
+        holder.txtDate.setText(posts.getDate());
+        holder.textView1.setText("DOI : "+posts.getDoi());
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,15 +73,17 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textView, textView1;
+        TextView textView, textView1,name,lastname,txtDate ;
         Button button1, button2;
         ConstraintLayout constraintLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            txtDate = itemView.findViewById(R.id.txtPostDate);
             imageView = itemView.findViewById(R.id.bukgedebuk);
             textView = itemView.findViewById(R.id.JudulJurnal);
+//            name = itemView.findViewById(R.id.postby);
             textView1 = itemView.findViewById(R.id.DoiJurnal);
             button1 = itemView.findViewById(R.id.editrwtrgs);
             button2 = itemView.findViewById(R.id.delrwtrgs);

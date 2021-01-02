@@ -27,6 +27,9 @@ public class Posts {
     @ColumnInfo(name = "doi")
     private String doi;
 
+    @ColumnInfo(name = "created_at")
+    private String date;
+
     //id
     public String getId(){
         return id;
@@ -72,13 +75,22 @@ public class Posts {
         this.judul = judul;
     }
 
-    //penyakit
+    //file
     public String getFile(){
         return file;
     }
 
     public void setFile(String file){
         this.file = file;
+    }
+
+    //date
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
 }

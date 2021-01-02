@@ -100,6 +100,7 @@ public class HomeActivity extends AppCompatActivity {
                         Posts posts = new Posts();
                         posts.setId(daftar.getString("id"));
                         posts.setId_user(daftar.getString("user_id"));
+                        posts.setDate(daftar.getString("created_at"));
                         posts.setAbstrak(daftar.getString("abstrak"));
                         posts.setDoi(daftar.getString("doi"));
                         posts.setFile(daftar.getString("file"));
@@ -116,7 +117,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
-                Toast.makeText(getApplicationContext(), "Get Failed Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Get Data Failed", Toast.LENGTH_SHORT).show();
             }
         },new Response.ErrorListener() {
             @Override

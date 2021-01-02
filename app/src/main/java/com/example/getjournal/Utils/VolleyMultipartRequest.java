@@ -1,7 +1,5 @@
 package com.example.getjournal.Utils;
 
-// VolleyMultipartRequest.java
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
