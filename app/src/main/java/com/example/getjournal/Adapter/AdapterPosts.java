@@ -2,6 +2,8 @@ package com.example.getjournal.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,8 @@ import java.util.List;
 public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> {
 
     ArrayList<Posts> Listposts;
+    private SharedPreferences userPref;
+    int status;
 
     Context context;
 
@@ -48,18 +52,31 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
 
         Posts posts = Listposts.get(position);
 
-        holder.textView.setText(" "+posts.getJudul());
-        holder.txtDate.setText(posts.getDate());
+//        Log.d("cccc", String.valueOf(status));
+        Log.d("DDD", posts.getId_user());
+        Log.d("EEE", userPref.getString("id",null));
+
+        holder.textView.setText(""+posts.getJudul());
+        holder.txtDate.setText("Published : "+posts.getDate());
         holder.textView1.setText("DOI : "+posts.getDoi());
 //        holder.name.setText(posts.getUser().getUserName());
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(posts.getId_user().equals(userPref.getString("id", null))){
+                    status = 1;
+//                    Log.d("1aaa", "if berhasil ");
+                }else{
+                    status = 0;
+//                    Log.d("2aaa", "if gagal ");
+                }
 
                 Intent intent =  new Intent(context, DetailRiwayatPost.class);
                 intent.putExtra("position", position);
+                intent.putExtra("status",status);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
+
             }
         });
 
@@ -81,6 +98,7 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            userPref =  context.getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
             txtDate = itemView.findViewById(R.id.txtPostDate);
             imageView = itemView.findViewById(R.id.bukgedebuk);
             textView = itemView.findViewById(R.id.JudulJurnal);

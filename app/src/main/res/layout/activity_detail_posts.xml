@@ -19,7 +19,6 @@
         app:cardBackgroundColor="@color/designMainColor"
         app:cardCornerRadius="16dp"
         app:cardPreventCornerOverlap="false">
-
         <ImageView
             android:id="@+id/gambarbuku"
             android:layout_width="130dp"
@@ -32,9 +31,9 @@
 
         <TextView
             android:id="@+id/txtJudulJurnal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Judul"
+            android:text="Judul :"
             android:textSize="14sp"
             android:layout_marginStart="165dp"
             android:layout_marginTop="14dp"
@@ -44,23 +43,24 @@
 
         <TextView
             android:id="@+id/txtJurnal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dekwik Android Studio"
+            android:text="A Feature-Driven Decision Support System for Heart Disease Prediction Based on Fisher's Discriminant Ratio and Backpropagation Algorithm"
             android:textSize="12sp"
             android:layout_marginStart="165dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="34dp"
             app:layout_constraintStart_toEndOf="@+id/gambarbuku"
             app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
 
         <TextView
             android:id="@+id/txtDoiDetail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="DOI"
+            android:text="DOI :"
             android:textSize="14sp"
             android:layout_marginStart="165dp"
-            android:layout_marginTop="54dp"
+            android:layout_marginTop="120dp"
             style="@style/textInputHintStyle"
             app:layout_constraintStart_toEndOf="@+id/gambarbuku"
             app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
@@ -69,10 +69,11 @@
             android:id="@+id/txtDoiJurnal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Doi PDF"
+            android:text="https://doi.org/10.24843/LKJITI.2020.v11.i02.p01 "
             android:textSize="12sp"
             android:layout_marginStart="165dp"
-            android:layout_marginTop="74dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintStart_toEndOf="@+id/gambarbuku"
             app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
 
@@ -80,11 +81,11 @@
             android:id="@+id/txtAbstrakDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Abstrak"
+            android:text="Abstrak :"
             android:textSize="14sp"
             style="@style/textInputHintStyle"
-            android:layout_marginStart="165dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="180dp"
             app:layout_constraintStart_toEndOf="@+id/gambarbuku"
             app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
 
@@ -92,10 +93,11 @@
             android:id="@+id/txtAbstrakJurnal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Umum"
+            android:text="Coronary heart disease included a group of cardiovascular, and it is a leading cause of death in low and middle-income countries. Risk factors for coronary heart disease are divided into two, namely primary and secondary risk factors. The need to identify characteristics or risk factors in heart disease patients by making the classification model. The modeling of heart disease classification to know how the system can able to reach the best prediction accuracy. Fisher's Discriminant Ratio is one of the methods for feature selection, which is used to get high discriminant features. While Backpropagation is one of the classification models to recognize patterns in heart disease patients. The experiment results showed that the accuracy of the classification model using 13 original features reached 92%. By reducing the features based on the score of the feature selection, then the lowest feature was removed from original features and left there were 12 features involved in the classification model which the accuracy increased to 93%. Furthermore, the results of determining the threshold (accuracy does not decrease continuously) and consider the effect of eliminating the lowest features that are considered quite fluctuating on accuracy. The accuracy reached 90% by eliminating the five lowest features and left eight existing features."
             android:textSize="12sp"
-            android:layout_marginStart="165dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="200dp"
             app:layout_constraintStart_toEndOf="@+id/gambarbuku"
             app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
 
@@ -104,25 +106,28 @@
             android:id="@+id/txtFileDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="File"
+            android:text="Download File :"
             android:textSize="14sp"
             style="@style/textInputHintStyle"
             android:layout_marginStart="165dp"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="550dp"
             app:layout_constraintStart_toEndOf="@+id/gambarbuku"
             app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
 
-        <TextView
-            android:id="@+id/txtPDF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Link PDF"
-            android:textSize="12sp"
-            android:layout_marginStart="165dp"
-            android:layout_marginTop="160dp"
+        <Button
+            android:id="@+id/btndownload"
+            android:layout_marginStart="265dp"
+            android:layout_marginTop="540dp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Download"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:backgroundTint="@color/white"
             app:layout_constraintStart_toEndOf="@+id/gambarbuku"
-            app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
-
+            app:layout_constraintTop_toBottomOf="@+id/gambarbuku"
+            />
 
     </androidx.cardview.widget.CardView>
 

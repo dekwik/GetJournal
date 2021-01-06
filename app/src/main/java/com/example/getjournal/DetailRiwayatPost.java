@@ -30,8 +30,8 @@ import java.util.Map;
 public class DetailRiwayatPost extends AppCompatActivity {
 
     TextView judul, doi, abstrak;
-    Button btnEdit, btnDelete;
-    int position;
+    Button btnEdit, btnDelete, btndownload;
+    int position, status;
     ProgressDialog dialog1;
     String id, idUser, idUser2, tokenLogin, file;
 
@@ -74,11 +74,18 @@ public class DetailRiwayatPost extends AppCompatActivity {
 
         btnEdit = (Button)findViewById(R.id.editrwtrgs);
         btnDelete = (Button)findViewById(R.id.delrwtrgs);
+        btndownload = findViewById(R.id.btndownload);
 
         dialog1 = new ProgressDialog(DetailRiwayatPost.this);
         dialog1.setCancelable(false);
 
         getIncomingExtra();
+        if(status==0){
+            btnEdit.setVisibility(View.GONE);
+            btnDelete.setVisibility(View.GONE);
+        }
+//        Log.d("3CCC", String.valueOf(status));
+
         setDetail();
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -157,6 +164,12 @@ public class DetailRiwayatPost extends AppCompatActivity {
                 finish();
             }
         });
+        btndownload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Button Download Diklik Nih", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -164,6 +177,7 @@ public class DetailRiwayatPost extends AppCompatActivity {
 
         if(getIntent().hasExtra("position")){
             position = getIntent().getIntExtra("position", 0);
+            status = getIntent().getIntExtra("status",0);
         }
     }
 
@@ -181,10 +195,6 @@ public class DetailRiwayatPost extends AppCompatActivity {
             abstrak.setText(posts.getAbstrak());
             id = posts.getId();
         }
-
-//        if(idUser!=idUser2){
-//            btnEdit.setVisibility(View.GONE);
-//            btnDelete.setVisibility(View.GONE);
 
     }
 }
