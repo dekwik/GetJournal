@@ -46,7 +46,6 @@ public class SignFragment extends Fragment {
     private TextView txtSignUp;
     private Button btnSignIn;
     private ProgressDialog dialog;
-    private String fcm_token;
     private String fcm;
 
     public  SignFragment(){}

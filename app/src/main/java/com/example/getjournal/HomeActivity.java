@@ -26,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.getjournal.Adapter.AdapterPosts;
 import com.example.getjournal.Database.RoomDB;
 import com.example.getjournal.Model.Posts;
+import com.example.getjournal.Model.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -93,9 +94,14 @@ public class HomeActivity extends AppCompatActivity {
                 JSONObject object1 = new JSONObject(response);
                 if (object1.getBoolean("success")) {
                     database.postDao().deleteAll();
-                    JSONArray user = new JSONArray(object1.getString("post"));
-                    for (int i=0; i<user.length(); i++){
-                        JSONObject daftar = user.getJSONObject(i);
+                    JSONArray array = new JSONArray(object1.getString("post"));
+                    for (int i=0; i<array.length(); i++){
+                        JSONObject daftar = array.getJSONObject(i);
+//                        JSONObject userObject = daftar.getJSONObject("user");
+//
+//                        User user = new User();
+//                        user.setId(userObject.getString("id"));
+//                        user.setUserName(userObject.getString("name") + " " + userObject.getString("lastname"));
 
                         Posts posts = new Posts();
                         posts.setId(daftar.getString("id"));
@@ -105,7 +111,6 @@ public class HomeActivity extends AppCompatActivity {
                         posts.setDoi(daftar.getString("doi"));
                         posts.setFile(daftar.getString("file"));
                         posts.setJudul(daftar.getString("judul"));
-
 
                         Listposts.add(posts);
                         database.postDao().insertPendaftaran(posts);

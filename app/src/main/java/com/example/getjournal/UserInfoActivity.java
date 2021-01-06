@@ -121,7 +121,7 @@ public class UserInfoActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = userPref.edit();
                     editor.putString("photo", object.getString("photo"));
                     editor.apply();
-                    startActivity(new Intent(UserInfoActivity.this, HomeActivity.class));
+                    startActivity(new Intent(UserInfoActivity.this, AuthActivity.class));
                     finish();
                 }
             } catch (JSONException e) {

@@ -48,9 +48,10 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
 
         Posts posts = Listposts.get(position);
 
-        holder.textView.setText(""+posts.getJudul());
+        holder.textView.setText(" "+posts.getJudul());
         holder.txtDate.setText(posts.getDate());
         holder.textView1.setText("DOI : "+posts.getDoi());
+//        holder.name.setText(posts.getUser().getUserName());
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +74,7 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textView, textView1,name,lastname,txtDate ;
+        TextView textView, textView1,name,txtDate ;
         Button button1, button2;
         ConstraintLayout constraintLayout;
 

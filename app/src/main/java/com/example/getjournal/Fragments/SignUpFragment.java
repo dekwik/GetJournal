@@ -166,7 +166,7 @@ public class SignUpFragment extends Fragment {
                     editor.putString("name",user.getString("name"));
                     editor.putString("lastname",user.getString("lastname"));
                     editor.putString("photo",user.getString("photo"));
-                    editor.putBoolean("isLoggedIn",true);
+                    editor.putBoolean("isLoggedIn",false);
                     editor.apply();
                     startActivity(new Intent(((AuthActivity)getContext()), UserInfoActivity.class));
                     ((AuthActivity) getContext()).finish();

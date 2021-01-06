@@ -52,6 +52,7 @@
         app:layout_constraintStart_toStartOf="@+id/txtPostDate"
         app:layout_constraintTop_toBottomOf="@+id/txtPostDate"
         android:text="123456" />
+
 <!--    <TextView-->
 <!--        android:id="@+id/postby"-->
 <!--        android:layout_width="wrap_content"-->
@@ -62,4 +63,15 @@
 <!--        app:layout_constraintStart_toStartOf="@+id/DoiJurnal"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/DoiJurnal"-->
 <!--        android:text="post by : dekwik" />-->
+
+    <TextView
+        android:id="@+id/selat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/DoiJurnal"
+        app:layout_constraintTop_toBottomOf="@+id/DoiJurnal"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

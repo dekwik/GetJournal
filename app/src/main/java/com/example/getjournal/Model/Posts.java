@@ -30,6 +30,7 @@ public class Posts {
     @ColumnInfo(name = "created_at")
     private String date;
 
+
     //id
     public String getId(){
         return id;
@@ -92,6 +93,5 @@ public class Posts {
     public void setDate(String date) {
         this.date = date;
     }
-
 }
 
