@@ -56,13 +56,13 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
         User user = listUser.get(position);
 
 //        Log.d("cccc", String.valueOf(status));
-        Log.d("DDD", posts.getId_user());
-        Log.d("EEE", userPref.getString("id",null));
+//        Log.d("DDD", posts.getId_user());
+//        Log.d("EEE", userPref.getString("id",null));
 
         holder.textView.setText(""+posts.getJudul());
         holder.txtDate.setText("Published : "+posts.getDate());
         holder.textView1.setText("DOI : "+posts.getDoi());
-        holder.name.setText("Post By : "+user.getName()+" "+user.getLastname());
+        holder.name.setText("Posted by : "+user.getName()+" "+user.getLastname());
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

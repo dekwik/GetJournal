@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getApplication().getSharedPreferences("onBoard", Context.MODE_PRIVATE);
         boolean isFirstTime = preferences.getBoolean("isFirstTime", true);
         if (isFirstTime){
+            fcm_token = FirebaseInstanceId.getInstance().getToken();
             //jika prtma kali, ganti value jadi false
             SharedPreferences.Editor editor = preferences.edit();
             editor.putBoolean("isFirstTime", false);
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         else{
+            fcm_token = FirebaseInstanceId.getInstance().getToken();
             //start auth activity
             startActivity(new Intent(MainActivity.this,AuthActivity.class));
             finish();

@@ -89,18 +89,26 @@
             app:layout_constraintStart_toEndOf="@+id/gambarbuku"
             app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
 
-        <TextView
-            android:id="@+id/txtAbstrakJurnal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Coronary heart disease included a group of cardiovascular, and it is a leading cause of death in low and middle-income countries. Risk factors for coronary heart disease are divided into two, namely primary and secondary risk factors. The need to identify characteristics or risk factors in heart disease patients by making the classification model. The modeling of heart disease classification to know how the system can able to reach the best prediction accuracy. Fisher's Discriminant Ratio is one of the methods for feature selection, which is used to get high discriminant features. While Backpropagation is one of the classification models to recognize patterns in heart disease patients. The experiment results showed that the accuracy of the classification model using 13 original features reached 92%. By reducing the features based on the score of the feature selection, then the lowest feature was removed from original features and left there were 12 features involved in the classification model which the accuracy increased to 93%. Furthermore, the results of determining the threshold (accuracy does not decrease continuously) and consider the effect of eliminating the lowest features that are considered quite fluctuating on accuracy. The accuracy reached 90% by eliminating the five lowest features and left eight existing features."
-            android:textSize="12sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="210dp"
-            app:layout_constraintStart_toEndOf="@+id/gambarbuku"
-            app:layout_constraintTop_toTopOf="@+id/gambarbuku" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="210dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtAbstrakJurnal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Coronary heart disease included a group of cardiovascular, and it is a leading cause of death in low and middle-income countries. Risk factors for coronary heart disease are divided into two, namely primary and secondary risk factors. The need to identify characteristics or risk factors in heart disease patients by making the classification model. The modeling of heart disease classification to know how the system can able to reach the best prediction accuracy. Fisher's Discriminant Ratio is one of the methods for feature selection, which is used to get high discriminant features. While Backpropagation is one of the classification models to recognize patterns in heart disease patients. The experiment results showed that the accuracy of the classification model using 13 original features reached 92%. By reducing the features based on the score of the feature selection, then the lowest feature was removed from original features and left there were 12 features involved in the classification model which the accuracy increased to 93%. Furthermore, the results of determining the threshold (accuracy does not decrease continuously) and consider the effect of eliminating the lowest features that are considered quite fluctuating on accuracy. The accuracy reached 90% by eliminating the five lowest features and left eight existing features.awdawdawdawssssssssssssssssssssssssssssssssssssssssssssssssssawdawdwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
 
         <TextView
             android:id="@+id/txtFileDetail"
