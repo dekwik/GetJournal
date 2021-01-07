@@ -15,4 +15,6 @@ public class Constant {
     public static final String POSTS = HOME+"/posts";
     public static final String POSTS_UPDATE = HOME+"/posts/update";
     public static final String POSTS_DELETE = HOME+"/posts/delete";
+
+    public static final String DOWNLOAD = URL+"uploads/";
 }
