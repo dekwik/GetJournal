@@ -7,9 +7,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.getjournal.Dao.PostDao;
+import com.example.getjournal.Dao.UserDao;
 import com.example.getjournal.Model.Posts;
+import com.example.getjournal.Model.User;
 
-@Database(entities = {Posts.class},version = 1,exportSchema = false)
+@Database(entities = {Posts.class, User.class},version = 1,exportSchema = false)
 public abstract class RoomDB extends RoomDatabase {
     private static com.example.getjournal.Database.RoomDB database;
     private static String DATABASE_NAME = "database";
@@ -22,4 +24,5 @@ public abstract class RoomDB extends RoomDatabase {
         return database;
     }
     public abstract PostDao postDao();
+    public abstract UserDao userDao();
 }

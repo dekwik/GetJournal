@@ -8,13 +8,13 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/book"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="10dp"
         android:id="@+id/bukgedebuk"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp"/>
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="14 November"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="10dp"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/bukgedebuk"
         app:layout_constraintTop_toBottomOf="@+id/JudulJurnal" />
@@ -49,7 +49,6 @@
         android:id="@+id/DoiJurnal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="120dp"
         android:textSize="12sp"
         android:layout_marginEnd="15dp"
@@ -57,25 +56,24 @@
         app:layout_constraintTop_toBottomOf="@+id/txtPostDate"
         android:text="DOI : 123456" />
 
+    <TextView
+        android:id="@+id/postby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:text="post by : dekwik"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/DoiJurnal"
+        app:layout_constraintTop_toBottomOf="@+id/DoiJurnal" />
+
 <!--    <TextView-->
-<!--        android:id="@+id/postby"-->
+<!--        android:id="@+id/selat"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:layout_marginTop="8dp"-->
 <!--        android:layout_marginBottom="20dp"-->
 <!--        android:textSize="12sp"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/DoiJurnal"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/DoiJurnal"-->
-<!--        android:text="post by : dekwik" />-->
-
-    <TextView
-        android:id="@+id/selat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="20dp"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/DoiJurnal"
-        app:layout_constraintTop_toBottomOf="@+id/DoiJurnal"
-        />
+<!--        app:layout_constraintStart_toStartOf="@+id/postby"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/postby"-->
+<!--        />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

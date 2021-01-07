@@ -26,13 +26,15 @@ import java.util.List;
 public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> {
 
     ArrayList<Posts> Listposts;
+    ArrayList<User> listUser;
     private SharedPreferences userPref;
     int status;
 
     Context context;
 
-    public AdapterPosts(ArrayList<Posts> Listposts,  Context context) {
+    public AdapterPosts(ArrayList<Posts> Listposts, ArrayList<User> listUser,  Context context) {
         this.Listposts = Listposts;
+        this.listUser = listUser;
         this.context = context;
     }
 
@@ -51,6 +53,7 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Posts posts = Listposts.get(position);
+        User user = listUser.get(position);
 
 //        Log.d("cccc", String.valueOf(status));
         Log.d("DDD", posts.getId_user());
@@ -59,7 +62,7 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
         holder.textView.setText(""+posts.getJudul());
         holder.txtDate.setText("Published : "+posts.getDate());
         holder.textView1.setText("DOI : "+posts.getDoi());
-//        holder.name.setText(posts.getUser().getUserName());
+        holder.name.setText("Post By : "+user.getName()+" "+user.getLastname());
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +105,7 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
             txtDate = itemView.findViewById(R.id.txtPostDate);
             imageView = itemView.findViewById(R.id.bukgedebuk);
             textView = itemView.findViewById(R.id.JudulJurnal);
-//            name = itemView.findViewById(R.id.postby);
+            name = itemView.findViewById(R.id.postby);
             textView1 = itemView.findViewById(R.id.DoiJurnal);
             button1 = itemView.findViewById(R.id.editrwtrgs);
             button2 = itemView.findViewById(R.id.delrwtrgs);

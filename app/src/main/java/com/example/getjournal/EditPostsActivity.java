@@ -276,7 +276,7 @@ public class EditPostsActivity extends AppCompatActivity {
                                 HomeActivity.recyclerView.getAdapter().notifyDataSetChanged();
 
 
-                                Intent i = new Intent(EditPostsActivity.this, DetailRiwayatPost.class);
+                                Intent i = new Intent(EditPostsActivity.this, HomeActivity.class);
                                 i.putExtra("position", position);
                                 startActivity(i);
                                 finish();

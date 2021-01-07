@@ -1,22 +1,61 @@
 package com.example.getjournal.Model;
 
-public class User {
-    private String id,userName;
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-    public String getId() {
+@Entity(tableName = "users")
+public class User {
+
+    @PrimaryKey(autoGenerate = false)
+    @NonNull
+    private int idNya;
+
+    @ColumnInfo(name = "id")
+    private int id;
+
+    @ColumnInfo(name = "name")
+    private String name;
+
+    @ColumnInfo(name = "lastname")
+    private String lastname;
+
+    //
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    //
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    //
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    //
+    public int getIdNya() {
+        return idNya;
+    }
+
+    public void setIdNya(int idNya) {
+        this.idNya = idNya;
+    }
+
 }
 

@@ -38,6 +38,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.security.AccessController.getContext;
+
 public class HomeActivity extends AppCompatActivity {
     public  static RecyclerView recyclerView;
     AdapterPosts adapter1;
@@ -45,6 +47,8 @@ public class HomeActivity extends AppCompatActivity {
     private String tokenLogin;
     public static ArrayList<Posts> Listposts = new ArrayList<>();
     public static ArrayList<Posts> Listpostsbackup = new ArrayList<>();
+    private ArrayList<User> userListBackup;
+    private ArrayList<User> listUser;
     private FloatingActionButton fab;
     RoomDB database;
 
@@ -87,21 +91,29 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void getPosts() {
-        Listposts.clear();
+        Listposts = new ArrayList<>();
+        listUser = new ArrayList<>();
+        Listpostsbackup = new ArrayList<>();
+        userListBackup = new ArrayList<>();
         database = RoomDB.getInstance(getApplicationContext());
         StringRequest request = new StringRequest(Request.Method.POST, Constant.POSTS, response -> {
             try {
                 JSONObject object1 = new JSONObject(response);
                 if (object1.getBoolean("success")) {
                     database.postDao().deleteAll();
+                    database.userDao().deleteAll();
                     JSONArray array = new JSONArray(object1.getString("post"));
                     for (int i=0; i<array.length(); i++){
                         JSONObject daftar = array.getJSONObject(i);
-//                        JSONObject userObject = daftar.getJSONObject("user");
-//
-//                        User user = new User();
-//                        user.setId(userObject.getString("id"));
-//                        user.setUserName(userObject.getString("name") + " " + userObject.getString("lastname"));
+                        JSONObject userObject = daftar.getJSONObject("user");
+
+                        User user = new User();
+                        user.setIdNya(i);
+                        user.setId(userObject.getInt("id"));
+                        user.setName(userObject.getString("name"));
+                        user.setLastname(userObject.getString("lastname"));
+                        listUser.add(user);
+                        database.userDao().insertUser(user);
 
                         Posts posts = new Posts();
                         posts.setId(daftar.getString("id"));
@@ -115,7 +127,7 @@ public class HomeActivity extends AppCompatActivity {
                         Listposts.add(posts);
                         database.postDao().insertPendaftaran(posts);
                     }
-                    adapter1 = new AdapterPosts(Listposts, getApplicationContext());
+                    adapter1 = new AdapterPosts(Listposts, listUser,getApplicationContext());
                     recyclerView.setAdapter(adapter1);
                 }else {
                     Toast.makeText(getApplicationContext(), "Get", Toast.LENGTH_SHORT).show();
@@ -129,7 +141,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 if (error instanceof NetworkError || error instanceof AuthFailureError || error instanceof NoConnectionError || error instanceof TimeoutError) {
                     Listpostsbackup = (ArrayList<Posts>) database.postDao().loadAllPosts();
-                    adapter2 = new AdapterPosts(Listpostsbackup, getApplicationContext());
+                    userListBackup = (ArrayList<User>) database.userDao().loadAllUsers();
+                    adapter2 = new AdapterPosts(Listpostsbackup,userListBackup, getApplicationContext());
                     recyclerView.setAdapter(adapter2);
                 }
             }
